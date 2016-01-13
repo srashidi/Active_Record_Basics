@@ -1,0 +1,102 @@
+Thinking Data First
+
+1.
+Courses
+
+title: string [unique, present]
+description: text [present]
+
+has_many lessons
+
+
+Lessons
+
+title: string [unique, present]
+body: text [present]
+course_id: integer [present]
+
+belongs_to course
+
+
+2.
+Users
+
+username: string [unique, 4-12 chars, present]
+email: string [unique, present]
+password: string [unique, 6-16 chars, present]
+
+has_one profile
+
+
+Profiles
+
+city: string [present]
+state: string [present]
+country: string [present]
+age: integer [1-3 digits, present]
+gender: string ['male' or 'female', present]
+user_id: integer [present]
+
+belongs_to user
+
+
+3.
+Users
+username: string [unique, 4-12 chars, present]
+email: string [unique, present]
+password: string [unique, 6-16 chars, present]
+
+has_many pins
+has_many comments
+
+
+Pins
+
+url: string [present]
+user_id: integer [present]
+
+belongs_to user
+has_many comments
+
+
+Comments
+body: text [present]
+user_id: integer [present]
+pin_id: integer [present]
+
+belongs_to user
+belongs_to pin
+
+
+4.
+Users
+username: string [unique, 4-12 chars, present]
+email: string [unique, present]
+password: string [unique, 6-16 chars, present]
+
+has_many posts
+has_many comments
+
+
+Posts
+
+url: string [present]
+user_id: integer [present]
+
+belongs_to user
+has_many comments
+
+
+Comments
+body: text [present]
+user_id: integer [present]
+heirarchy: integer [present]
+	if heirarchy = 0
+		post_id: integer [present]
+		belongs_to post
+	else
+		comment_id: integer [present]
+		belongs_to comment
+
+belongs_to user
+has_many comments
