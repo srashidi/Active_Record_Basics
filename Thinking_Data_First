@@ -23,7 +23,7 @@ Users
 
 username: string [unique, 4-12 chars, present]
 email: string [unique, present]
-password: string [unique, 6-16 chars, present]
+password: string [6-16 chars, present]
 
 has_one profile
 
@@ -44,7 +44,7 @@ belongs_to user
 Users
 username: string [unique, 4-12 chars, present]
 email: string [unique, present]
-password: string [unique, 6-16 chars, present]
+password: string [6-16 chars, present]
 
 has_many pins
 has_many comments
@@ -72,7 +72,7 @@ belongs_to pin
 Users
 username: string [unique, 4-12 chars, present]
 email: string [unique, present]
-password: string [unique, 6-16 chars, present]
+password: string [6-16 chars, present]
 
 has_many posts
 has_many comments
